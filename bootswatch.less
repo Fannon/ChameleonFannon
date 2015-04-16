@@ -1,16 +1,33 @@
 
 // Navbar =====================================================================
 
-.navbar-fixed-top,
-.navbar-static-top {
-  margin-bottom: 0;
+#mw-navigation {
 
-  ul.navbar-nav {
-    li.dropdown {
-      border-right: 1px solid #E7E7E7;
+    margin-bottom: 0;
+    border-bottom: 4px solid #659ED5;
+
+    .navbar-brand {
+        padding: 0 4px;
+
+        img {
+            max-height: 50px;
+        }
     }
-  }
+
+    ul.navbar-nav {
+        li.dropdown {
+            border-right: 1px solid #E7E7E7;
+        }
+    }
 }
+
+body.action-formedit {
+    #mw-navigation {
+        border-color: #CB5A1D;
+    }
+}
+
+
 
 // Buttons ====================================================================
 
@@ -18,6 +35,26 @@
 
 .contentHeader {
   margin: 4px 0 8px 0;
+}
+
+h1.firstHeading {
+    margin: 0 0 4px 0;
+    padding: 0;
+    border: none;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin: 8px 0 4px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #DDD;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+h4 {
+
 }
 
 // Tables =====================================================================
@@ -33,6 +70,10 @@
 // Containers =================================================================
 
 // CUSTOM MW / SMW STYLE ======================================================
+
+.mw-editsection {
+    display:none !important;
+}
 
 .naming-box,
 .description-box,
@@ -54,16 +95,17 @@
 }
 .infoMessage,
 #catlinks {
-    border: 1px solid #AAA;
-    background: #F7F7F7;
+    border: 1px solid #E7E7E7;
+    background: #F8F8F8;
 }
 
 
 a.mobo-tag {
     font-size: 11px;
-    background: #555;
+    line-height: 1em;
+    background: #444;
     color: #FFF;
-    padding: 3px 8px;
+    padding: 4px 8px 3px 8px;
     margin-left: 8px;
     border-radius: 3px;
     display: inline-block;
@@ -94,13 +136,16 @@ a.mobo-tag-veraltet {
     border-radius: 3px;
     margin: 8px 0;
 }
-.td-true {
-    background: #6CAF1D;
+.td-true,
+.td-false {
     color: #FFF;
+    text-align: center;
+}
+.td-true {
+    background: #91BD1C;
 }
 .td-false {
-    background: #C53330;
-    color: #FFF;
+    background: #CF5642;
 }
 
 
@@ -199,20 +244,7 @@ a.mobo-tag-veraltet {
         opacity: 1;
     }
 }
-#sfForm {
-    .inputError {
-        border-color: #E16761 !important;
-    }
-    .errorMessage {
-        color: #CB1209 !important;
-    }
-    #headertabs {
-        border: 1px solid #BD3212;
-        padding: 4px 1px 1px 1px;
-        border-radius: 3px;
-        background: #FFF2F1 !important;
-    }
-}
+
 .sfFieldContent {
     display: inline-block;
     width: 70%;
@@ -256,27 +288,28 @@ table.formdata {
 table.formdata td,table.formdata th {
     padding: 2px 4px;
 }
-.ui-state-active,.ui-widget-content {
+.ui-state-active,
+.ui-widget-content {
     background: #FCFCFC !important;
 }
-#mw-content-text {
-    #headertabs {
-        border: 1px solid #0075C4;
-        padding: 4px 1px 1px 1px;
-        border-radius: 3px;
-        background: #F6FBFF !important;
+
+
+
+/* HeaderTabs Adjustments */
+#headertabs {
+    background: none !important;
+
+    .ui-widget-header,
+    .ui-widget-content {
+        background: none !important;
+    }
+    .ui-tabs .ui-tabs-panel {
+        padding: 0 !important;
     }
 }
-#mw-content-text #headertabs .ui-tabs-nav a,#mw-content-text #headertabs .ui-tabs-nav a:visited {
-    color: #0075C4 !important;
-}
-#sfForm #headertabs .ui-tabs-nav a,#sfForm #headertabs .ui-tabs-nav a:visited {
-    color: #BD3212 !important;
-}
-#ca-form_edit a,#ca-form_edit a:visited {
-    color: #BD3212 !important;
-}
 
+
+/* ??? */
 .action-formedit {
     #ca-form_edit {
         background: #FFF;
