@@ -1,0 +1,285 @@
+
+// Navbar =====================================================================
+
+.navbar-fixed-top,
+.navbar-static-top {
+  margin-bottom: 0;
+
+  ul.navbar-nav {
+    li.dropdown {
+      border-right: 1px solid #E7E7E7;
+    }
+  }
+}
+
+// Buttons ====================================================================
+
+// Typography =================================================================
+
+.contentHeader {
+  margin: 4px 0 8px 0;
+}
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
+
+// CUSTOM MW / SMW STYLE ======================================================
+
+.naming-box,
+.description-box,
+.infoMessage,
+#catlinks {
+    padding: 4px 8px;
+    margin: 8px 0;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+.naming-box {
+    border: 1px solid #6BBD12;
+    background: #D3E5C7;
+}
+
+.description-box {
+    border: 1px solid #7EB4EA;
+    background: #D8E8F7;
+}
+.infoMessage,
+#catlinks {
+    border: 1px solid #AAA;
+    background: #F7F7F7;
+}
+
+
+a.mobo-tag {
+    font-size: 11px;
+    background: #555;
+    color: #FFF;
+    padding: 3px 8px;
+    margin-left: 8px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a.mobo-tag:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+a.mobo-tag-inBearbeitung {
+    background: #D59F0F;
+}
+a.mobo-tag-falsch {
+    background: #B63D13;
+}
+a.mobo-tag-ungenuegend {
+    background: #841DB8;
+}
+a.mobo-tag-veraltet {
+    background: #B97A57;
+}
+.mobo-generated {
+    display: block;
+    border: 1px solid #E8B028;
+    background: #F5ECD7;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin: 8px 0;
+}
+.td-true {
+    background: #6CAF1D;
+    color: #FFF;
+}
+.td-false {
+    background: #C53330;
+    color: #FFF;
+}
+
+
+// CUSTOM SEMANTIC FORMS  STYLE ===============================================
+
+/** INPUT FIELD STYLE */
+
+#sfForm .sfFormContainer {
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding: 4px 10px;
+}
+#sfForm .multipleTemplateInstance .sfFormContainer {
+    border: none;
+    padding: 0;
+}
+#sfForm fieldset {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+}
+#sfForm .createboxInput,
+#sfForm .mandatoryField,
+#sfForm textarea {
+    width: 364px;
+    max-width: 382px !important;
+}
+#sfForm .select2-container {
+    width: 372px !important;
+}
+#sfForm .select2-container-multi {
+    width: 382px !important;
+}
+.sf-select2-dropdown {
+    width: 382px !important;
+}
+.select2-choices,
+.select2-choice, {
+    width: 380px;
+}
+
+.select2-choice {
+    width: 372px;
+}
+.select2-container-multi .select2-choices {
+    border-color: #BBB !important;
+    border-bottom: 3px double #BBB !important;
+}
+
+.autoGrow {
+  width: 276px;
+}
+.multipleTemplateInstance {
+    max-width: 740px;
+}
+#sf_free_text {
+    width: 100% !important;
+    max-width: 800px !important;
+}
+
+/** Responsive Forms */
+.sfFieldRow {
+    margin: 8px 0;
+    max-width: 640px;
+}
+.sfFieldLabel {
+    display: inline-block;
+    padding-right: 2px;
+    width: 25%;
+    min-width: 80px;
+    max-width: 160px;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+    .simple-tooltip-inline {
+        border-bottom: 1px solid #C8C8C8;
+        padding-bottom: 1px;
+    }
+}
+.sfFieldLabel::after {
+    content: "*";
+    margin-left: 2px;
+    font-size: 1.5em;
+    line-height: 1em;
+    font-weight: bold;
+    opacity: 0;
+}
+.mandatoryInput {
+    .sfFieldLabel::after {
+        color: #E16761;
+        opacity: 1;
+    }
+}
+.recommendedInput {
+    .sfFieldLabel::after {
+        color: #FFB93D;
+        opacity: 1;
+    }
+}
+#sfForm {
+    .inputError {
+        border-color: #E16761 !important;
+    }
+    .errorMessage {
+        color: #CB1209 !important;
+    }
+    #headertabs {
+        border: 1px solid #BD3212;
+        padding: 4px 1px 1px 1px;
+        border-radius: 3px;
+        background: #FFF2F1 !important;
+    }
+}
+.sfFieldContent {
+    display: inline-block;
+    width: 70%;
+    max-width: 460px;
+}
+.checklistForm {
+    .sfFormContainer {
+        background: #FBFFF6 !important;
+        border: 1px solid #70C00C !important;
+    }
+    .sfFieldLabel {
+        min-width: 320px;
+    }
+    .sfFieldContent {
+        width: auto;
+    }
+    .sfFieldRow {
+        max-width: none;
+        border-bottom: 1px solid #DDD;
+        margin: 4px 0;
+        padding-bottom: 4px;
+    }
+}
+.formdata {
+    td.Ja {
+        background-color: #5CA500;
+        color: #FFF;
+    }
+    td.Nein {
+        background-color: #9D2114;
+        color: #FFF;
+    }
+    td.Unbekannt {
+        background-color: #D19800;
+        color: #FFF;
+    }
+}
+table.formdata {
+    min-width: 400px;
+}
+table.formdata td,table.formdata th {
+    padding: 2px 4px;
+}
+.ui-state-active,.ui-widget-content {
+    background: #FCFCFC !important;
+}
+#mw-content-text {
+    #headertabs {
+        border: 1px solid #0075C4;
+        padding: 4px 1px 1px 1px;
+        border-radius: 3px;
+        background: #F6FBFF !important;
+    }
+}
+#mw-content-text #headertabs .ui-tabs-nav a,#mw-content-text #headertabs .ui-tabs-nav a:visited {
+    color: #0075C4 !important;
+}
+#sfForm #headertabs .ui-tabs-nav a,#sfForm #headertabs .ui-tabs-nav a:visited {
+    color: #BD3212 !important;
+}
+#ca-form_edit a,#ca-form_edit a:visited {
+    color: #BD3212 !important;
+}
+
+.action-formedit {
+    #ca-form_edit {
+        background: #FFF;
+        background-image: none;
+    }
+}
