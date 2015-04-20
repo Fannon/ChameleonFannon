@@ -58,6 +58,10 @@ h4 {
 
 }
 
+a:visited {
+    color: @brand-primary;
+}
+
 // Tables =====================================================================
 
 // Forms ======================================================================
@@ -71,7 +75,6 @@ h4 {
 // Containers =================================================================
 
 // CUSTOM HEADERTABS STYLE ====================================================
-
 
 #headertabs {
     background: none !important;
@@ -96,15 +99,52 @@ h4 {
 }
 
 
-
-
-
-
 // CUSTOM MW / SMW STYLE ======================================================
 
-.mw-editsection {
+/** Misc */
+
+.mw-editsection,
+.catlinks-allhidden {
     display:none !important;
 }
+
+
+/** Buttons */
+
+.multipleTemplateAdder,
+#wpDiff,
+#wpPreview,
+#wpSave {
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+}
+
+#wpSave {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+
+/** Message Boxes */
 
 .naming-box,
 .description-box,
@@ -166,7 +206,9 @@ a.mobo-tag-veraltet {
     background: #B97A57;
 }
 
+
 /** Booleans (Checkboxes) */
+
 .td-true,
 .td-false {
     color: #FFF;
@@ -237,7 +279,8 @@ a.mobo-tag-veraltet {
     max-width: 800px !important;
 }
 
-/** Responsive Forms */
+
+/** Mobo Responsive Forms */
 .sfFieldRow {
     margin: 8px 0;
     max-width: 640px;
@@ -323,18 +366,4 @@ table.formdata td,table.formdata th {
 .ui-state-active,
 .ui-widget-content {
     background: #FCFCFC !important;
-}
-
-
-
-/* HeaderTabs Adjustments */
-
-
-
-/* ??? */
-.action-formedit {
-    #ca-form_edit {
-        background: #FFF;
-        background-image: none;
-    }
 }
