@@ -21,7 +21,8 @@
     }
 }
 
-body.action-formedit {
+body.action-formedit,
+body.mw-special-FormEdit {
     #mw-navigation {
         border-color: #CB5A1D;
     }
@@ -69,6 +70,36 @@ h4 {
 
 // Containers =================================================================
 
+// CUSTOM HEADERTABS STYLE ====================================================
+
+
+#headertabs {
+    background: none !important;
+
+    .ui-widget-header {
+        margin-bottom: 8px;
+    }
+
+    .ui-widget-header,
+    .ui-widget-content {
+        background: none !important;
+    }
+    .ui-tabs .ui-tabs-panel {
+        padding: 0 !important;
+    }
+
+    .ui-tabs-nav li a {
+        padding: 6px 10px 4px 10px !important;
+        font-size: 0.9em;
+    }
+
+}
+
+
+
+
+
+
 // CUSTOM MW / SMW STYLE ======================================================
 
 .mw-editsection {
@@ -78,7 +109,9 @@ h4 {
 .naming-box,
 .description-box,
 .infoMessage,
+.mobo-generated,
 #catlinks {
+    display: block;
     padding: 4px 8px;
     margin: 8px 0;
     border: 1px solid #CCC;
@@ -93,13 +126,17 @@ h4 {
     border: 1px solid #7EB4EA;
     background: #D8E8F7;
 }
+.mobo-generated {
+    border: 1px solid #E8B028;
+    background: #F5ECD7;
+}
 .infoMessage,
 #catlinks {
     border: 1px solid #E7E7E7;
     background: #F8F8F8;
 }
 
-
+/** Tags */
 a.mobo-tag {
     font-size: 11px;
     line-height: 1em;
@@ -128,14 +165,8 @@ a.mobo-tag-ungenuegend {
 a.mobo-tag-veraltet {
     background: #B97A57;
 }
-.mobo-generated {
-    display: block;
-    border: 1px solid #E8B028;
-    background: #F5ECD7;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin: 8px 0;
-}
+
+/** Booleans (Checkboxes) */
 .td-true,
 .td-false {
     color: #FFF;
@@ -199,6 +230,7 @@ a.mobo-tag-veraltet {
 }
 .multipleTemplateInstance {
     max-width: 740px;
+    background: #F3F3F3 !important;
 }
 #sf_free_text {
     width: 100% !important;
@@ -296,17 +328,7 @@ table.formdata td,table.formdata th {
 
 
 /* HeaderTabs Adjustments */
-#headertabs {
-    background: none !important;
 
-    .ui-widget-header,
-    .ui-widget-content {
-        background: none !important;
-    }
-    .ui-tabs .ui-tabs-panel {
-        padding: 0 !important;
-    }
-}
 
 
 /* ??? */
