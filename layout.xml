@@ -8,8 +8,8 @@
 
     <component type="NavbarHorizontal" fixed="1">
         <component type="Logo" position="head"></component>
-        <component type="NavMenu" flatten="navigation"></component>
-        <component type="PageTools" hideSelectedNameSpace="1"></component>
+        <component type="PageTools"></component>
+        <component type="NavMenu" flatten="navigation" class="NavMenu"></component>
         <component type="SearchBar" position="right"></component>
         <component type="PersonalTools" position="right"></component>
     </component>
