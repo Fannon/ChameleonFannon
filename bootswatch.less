@@ -1,6 +1,19 @@
 
+// Layout =====================================================================
+.mw-body {
+    padding: 0;
+    margin: 0;
+}
+
+#bodyContent {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 4px solid #EEE;
+}
+
 // Navbar =====================================================================
 
+// Top Navbar
 #mw-navigation {
 
     margin-bottom: 0;
@@ -19,6 +32,31 @@
             border-right: 1px solid #E7E7E7;
         }
     }
+
+    #ca-nstab-main {
+        background: #CFDEF2;
+        a, a:active,a:hover {
+            color: #1E66AB;
+        }
+    }
+
+    #ca-form_edit {
+        background: #F8E3DF;
+        a, a:active,a:hover {
+            color: #B63D13;
+        }
+    }
+
+    .navbar .dropdown-menu > li.selected > a {
+        background-color: transparent;
+    }
+    .navbar-nav > li > .dropdown-menu {
+      margin-top: 3px;
+    }
+
+    .caret {
+        display: none;
+    }
 }
 
 body.action-formedit,
@@ -28,24 +66,48 @@ body.mw-special-FormEdit {
     }
 }
 
-#ca-nstab-main {
-    background: #CFDEF2;
-    a, a:active,a:hover {
-        color: #1E66AB;
+
+
+// Category list
+#catlinks {
+
+    background: none !important;
+    border: none !important;
+    padding: 4px 0 0 0 !important;
+    margin: 0 0 4px 0 !important;
+
+    li {
+        border: none;
+        padding: 0;
+    }
+
+    li > a {
+        background: #333;
+        color: #FFF;
+        padding: 3px 8px;
+        margin: 0 4px;
+        margin-bottom: 4px;
+        display: inline-block;
+        border-radius: 3px;
+    }
+
+}
+
+// Bottom Navbar
+.p-tb.navbar {
+    background: none;
+    border: none;
+    margin-bottom: 8px;
+
+    .navbar-nav > li > a {
+        padding: 0 0 0 6px;
+        background: #EEE;
+        border-radius: 3px;
+        padding: 1px 8px;
+        margin-right: 8px;
+        margin-bottom: 4px;
     }
 }
-
-#ca-form_edit {
-    background: #F8E3DF;
-    a, a:active,a:hover {
-        color: #B63D13;
-    }
-}
-
-.navbar .dropdown-menu > li.selected > a {
-    background-color: transparent;
-}
-
 
 
 // Buttons ====================================================================
@@ -57,24 +119,40 @@ body.mw-special-FormEdit {
 }
 
 h1.firstHeading {
+    font-size: 3.2rem;
     margin: 0 0 4px 0;
     padding: 0;
     border: none;
 }
 
 h2 {
-    font-size: 2.8rem;
-    margin: 8px 0 4px 0;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #DDD;
+    font-size: 2.2rem;
+
+    margin: 2.2rem 0 4px 0;
+    padding-bottom: 4px;
+
+    border-bottom: 3px double #DDD;
 }
 h3 {
-    font-size: 2.4rem;
+    font-size: 2.0rem;
+
+    margin: 2rem 0 4px 0;
+    border-bottom: 1px dotted #DDD;
+    padding-bottom: 2px;
 }
+
 
 h4 {
 
 }
+.panel-heading {
+    padding: 10px 14px 8px 14px;
+
+    .panel-title {
+        border: none;
+    }
+}
+
 
 a:visited {
     color: @brand-primary;
@@ -82,9 +160,31 @@ a:visited {
 
 // Tables =====================================================================
 
+table.wikitable {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    font-size: 0.9em;
+
+    tr > td,
+    tr > th {
+        padding: 2px 4px;
+        border: 1px solid #CCC;
+    }
+
+    tr > th {
+        text-align: left;
+    }
+
+}
+
+table.formdata {
+    min-width: 420px;
+}
+
 // Forms ======================================================================
 
 // Navs =======================================================================
+
 
 // Indicators =================================================================
 
@@ -94,8 +194,13 @@ a:visited {
 
 // CUSTOM HEADERTABS STYLE ====================================================
 
-#headertabs {
+#headertabs.bare {
+
     background: none !important;
+
+    .ui-widget-content {
+        padding: 0 !important;
+    }
 
     .ui-widget-header {
         margin-bottom: 8px;
@@ -105,13 +210,19 @@ a:visited {
     .ui-widget-content {
         background: none !important;
     }
-    .ui-tabs .ui-tabs-panel {
-        padding: 0 !important;
-    }
 
     .ui-tabs-nav li a {
         padding: 6px 10px 4px 10px !important;
         font-size: 0.9em;
+    }
+
+    .ui-widget-content a,
+    .ui-widget-content a:visited {
+        color: @link-color !important;
+    }
+
+    .ui-widget-content a.new {
+        color: @link-red-color !important;
     }
 
 }
@@ -288,8 +399,8 @@ a.mobo-tag-veraltet {
     background: #F3F3F3 !important;
 }
 #sf_free_text {
-    width: 100% !important;
-    max-width: 800px !important;
+    width: 100%;
+    min-width: 100%;
 }
 
 
@@ -370,12 +481,7 @@ a.mobo-tag-veraltet {
         color: #FFF;
     }
 }
-table.formdata {
-    min-width: 400px;
-}
-table.formdata td,table.formdata th {
-    padding: 2px 4px;
-}
+
 .ui-state-active,
 .ui-widget-content {
     background: #FCFCFC !important;
