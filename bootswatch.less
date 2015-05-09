@@ -7,8 +7,52 @@
 
 #bodyContent {
     padding-bottom: 8px;
-    margin-bottom: 8px;
-    border-bottom: 4px solid #EEE;
+}
+
+// Typography =================================================================
+
+.contentHeader {
+  margin: 4px 0 8px 0;
+}
+
+h1.firstHeading {
+    font-size: 3.2rem;
+    margin: 0 0 4px 0;
+    padding: 0;
+    border: none;
+}
+
+h2 {
+    font-size: 2.2rem;
+
+    margin: 2.2rem 0 4px 0;
+    padding-bottom: 4px;
+
+    border-bottom: 3px double #DDD;
+}
+h3 {
+    font-size: 2.0rem;
+
+    margin: 2rem 0 4px 0;
+    border-bottom: 1px dotted #DDD;
+    padding-bottom: 2px;
+}
+
+
+h4 {
+
+}
+.panel-heading {
+    padding: 8px 14px 6px 14px;
+
+    .panel-title {
+        border: none;
+    }
+}
+
+
+a:visited {
+    color: @brand-primary;
 }
 
 // Navbar =====================================================================
@@ -112,51 +156,7 @@ body.mw-special-FormEdit {
 
 // Buttons ====================================================================
 
-// Typography =================================================================
 
-.contentHeader {
-  margin: 4px 0 8px 0;
-}
-
-h1.firstHeading {
-    font-size: 3.2rem;
-    margin: 0 0 4px 0;
-    padding: 0;
-    border: none;
-}
-
-h2 {
-    font-size: 2.2rem;
-
-    margin: 2.2rem 0 4px 0;
-    padding-bottom: 4px;
-
-    border-bottom: 3px double #DDD;
-}
-h3 {
-    font-size: 2.0rem;
-
-    margin: 2rem 0 4px 0;
-    border-bottom: 1px dotted #DDD;
-    padding-bottom: 2px;
-}
-
-
-h4 {
-
-}
-.panel-heading {
-    padding: 10px 14px 8px 14px;
-
-    .panel-title {
-        border: none;
-    }
-}
-
-
-a:visited {
-    color: @brand-primary;
-}
 
 // Tables =====================================================================
 
@@ -224,7 +224,10 @@ table.formdata {
     .ui-widget-content a.new {
         color: @link-red-color !important;
     }
+}
 
+#headertabs.bare.ui-tabs {
+    border-bottom: 4px solid #EEE !important;
 }
 
 
@@ -350,31 +353,41 @@ a.mobo-tag-veraltet {
 
 /** INPUT FIELD STYLE */
 
-#sfForm .sfFormContainer {
-    border: 1px solid #DDD;
-    border-radius: 3px;
-    padding: 4px 10px;
+#sfForm {
+
+    .sfFormContainer {
+        border: 1px solid #DDD;
+        border-radius: 3px;
+        padding: 4px 10px;
+    }
+    .multipleTemplateInstance .sfFormContainer {
+        border: none;
+        padding: 0;
+    }
+    fieldset {
+      border: 1px solid #DDD;
+      border-radius: 3px;
+    }
+    .createboxInput,
+    .mandatoryField,
+    textarea {
+        width: 380px;
+        max-width: 382px !important;
+    }
+    .select2-container {
+        width: 372px !important;
+    }
+    .select2-container-multi {
+        width: 382px !important;
+    }
+
+    td.instanceRearranger {
+        width: 10px;
+    }
+
 }
-#sfForm .multipleTemplateInstance .sfFormContainer {
-    border: none;
-    padding: 0;
-}
-#sfForm fieldset {
-  border: 1px solid #DDD;
-  border-radius: 3px;
-}
-#sfForm .createboxInput,
-#sfForm .mandatoryField,
-#sfForm textarea {
-    width: 364px;
-    max-width: 382px !important;
-}
-#sfForm .select2-container {
-    width: 372px !important;
-}
-#sfForm .select2-container-multi {
-    width: 382px !important;
-}
+
+
 .sf-select2-dropdown {
     width: 382px !important;
 }
@@ -414,7 +427,7 @@ a.mobo-tag-veraltet {
     padding-right: 2px;
     width: 25%;
     min-width: 80px;
-    max-width: 160px;
+    max-width: 180px;
     font-weight: bold;
     text-align: right;
     vertical-align: top;
