@@ -18,8 +18,7 @@
 
         try {
             var el = $('[data-property=' + propertyName + ']');
-
-            if (el && el.length > 0 && el.attr('data-value') === 'Ja') {
+            if (el && el.length > 0 && el.text() === 'Ja') {
                 url = mw.config.get('wgScript') + '/Spezial:Suche_mittels_Attribut/' + propertyName + '/wahr';
                 $('#firstHeading').append('<a class="mobo-tag mobo-tag-' + propertyName + '" href="' + url + '">' + title + '</div>');
             }
@@ -90,12 +89,16 @@
 
                 $headertabs.children().each(function(i, el) {
 
-                    // Hide all Tabs that don't contain data from forms or ask queries
+                    var $el = $(el);
+
                     if (el.id) {
-                        var formContent = $(el).find('.formdata, .smwtable');
-                        if (formContent.length === 0) {
-                            console.log('Hiding Tab: ' + el.id);
-                            style += 'li[aria-controls=' + el.id + '] {display: none;} ';
+
+                        // Hide all Tabs that don't contain data from forms or ask queries
+                        if ($el.find('[data-property]').length === 0) {
+                            if (el.id !== '_C3_9Cbersicht') { // Never hide the "Übersicht" tab
+                                console.log('mw.libs.ChameleonFannon.hideEmptyTabs() :: ' + el.id);
+                                style += 'li[aria-controls=' + el.id + '] {display: none;} ';
+                            }
                         }
                     }
 
@@ -116,9 +119,6 @@
     $(document).ready(function() {
 
         try {
-
-            console.log('ChameleonFannon.js INIT');
-
 
             //////////////////////////////////////////
             // ChameleonTopMenu Buttons             //
@@ -159,7 +159,7 @@
                 // Free tags (semicolon separated list)
                 var tags = $('[data-property=tag]');
                 if (tags.length > 0) {
-                    var val = tags.attr('data-value');
+                    var val = tags.text();
 
                     if (val.trim()) {
                         $.each(val.split(';'), function(index, value) {
@@ -234,7 +234,6 @@
             //         }
             //     });
             // });
-
 
 
         } catch (e) {

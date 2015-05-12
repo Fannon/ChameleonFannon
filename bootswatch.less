@@ -23,7 +23,7 @@ h1.firstHeading {
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 
     margin: 2.2rem 0 4px 0;
     padding-bottom: 4px;
@@ -31,16 +31,17 @@ h2 {
     border-bottom: 3px double #DDD;
 }
 h3 {
-    font-size: 2.0rem;
+    font-size: 2.2rem;
 
     margin: 2rem 0 4px 0;
-    border-bottom: 1px dotted #DDD;
+    border-bottom: 1px solid #DDD;
     padding-bottom: 2px;
 }
 
 
 h4 {
-
+    font-size: 2.0rem;
+    border-bottom: 1px dotted #DDD;
 }
 .panel-heading {
     padding: 8px 14px 6px 14px;
@@ -93,7 +94,7 @@ a:visited {
     #sf-save-alt {
         background: #E2FFA8;
         a, a:active,a:hover {
-            color: #75A713;
+            color: #496F00;
         }
     }
 
@@ -240,6 +241,29 @@ tr.highlightRow {
 #headertabs.bare.ui-tabs {
     border-bottom: 4px solid #EEE !important;
     padding: 8px 0 !important;
+}
+
+
+// MOBO display formats =======================================================
+
+.bootstrap-row {
+    .row {
+        padding: 1px 0;
+        border-bottom: 1px dotted #EEE;
+    }
+
+    .row-label {
+        font-weight: bold;
+        text-align: right;
+    }
+
+
+}
+
+@media (max-width: @screen-sm-min) {
+    .bootstrap-row .row-label {
+        text-align: left;
+    }
 }
 
 
