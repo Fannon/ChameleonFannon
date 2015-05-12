@@ -1,6 +1,6 @@
 <?php
 /**
- * VectorUp is a Vector skin that adds CSS and JavaScript to style MediaWiki and further extensions more modern and consistently
+ * ChameleonFannon is a Vector skin that adds CSS and JavaScript to style MediaWiki and further extensions more modern and consistently
  *
  * Currently "upgraded":
  * * MediaWiki (Buttons, Typography)
@@ -9,16 +9,16 @@
  * * HeaderTabs
  * *
  *
- * For more info see http://mediawiki.org/wiki/Extension:VectorUp
+ * For more info see http://mediawiki.org/wiki/Skin:ChameleonFannon
  *
  * @file
  * @ingroup Extensions
  * @package MediaWiki
  *
- * @links https://github.com/Fannon/VectorUp/blob/master/README.md Documentation
- * @links https://www.mediawiki.org/wiki/Extension_talk:VectorUp Support
- * @links https://github.com/Fannon/VectorUp/issues Bug tracker
- * @links https://github.com/Fannon/VectorUp Source code
+ * @links https://github.com/Fannon/ChameleonFannon/blob/master/README.md Documentation
+ * @links https://www.mediawiki.org/wiki/Extension_talk:ChameleonFannon Support
+ * @links https://github.com/Fannon/ChameleonFannon/issues Bug tracker
+ * @links https://github.com/Fannon/ChameleonFannon Source code
  *
  * @author Simon Heimler (Fannon), 2015
  * @license http://opensource.org/licenses/mit-license.php The MIT License (MIT)
@@ -40,11 +40,11 @@
 
 $wgExtensionCredits['other'][] = array(
    'path'           => __FILE__,
-   'name'           => 'VectorUp',
+   'name'           => 'ChameleonFannon',
    'author'         => array('Simon Heimler'),
    'version'        => '0.0.1',
-   'url'            => 'https://www.mediawiki.org/wiki/Extension:VectorUp',
-   'descriptionmsg' => 'vectorup-desc',
+   'url'            => 'https://www.mediawiki.org/wiki/Skin:ChameleonFannon',
+   'descriptionmsg' => 'ChameleonFannon-desc',
    'license-name'   => 'MIT'
 );
 
@@ -53,26 +53,26 @@ $wgExtensionCredits['other'][] = array(
 // RESOURCE LOADER                      //
 //////////////////////////////////////////
 
-$wgResourceModules['ext.VectorUp'] = array(
+$wgResourceModules['ext.ChameleonFannon'] = array(
    'scripts' => array(
-      'lib/VectorUp.js',
+      'js/ChameleonFannon.js',
    ),
    'styles' => array(
    ),
    'dependencies' => array(
    ),
    'localBasePath' => __DIR__,
-   'remoteExtPath' => 'VectorUp',
+   'remoteExtPath' => '/../../skins/ChameleonFannon',
 );
 
 // Register hooks
-$wgHooks['BeforePageDisplay'][] = 'VectorUpOnBeforePageDisplay';
+$wgHooks['BeforePageDisplay'][] = 'ChameleonFannonOnBeforePageDisplay';
 
 /**
 * Add libraries to resource loader
 */
-function VectorUpOnBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+function ChameleonFannonOnBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
   // Add as ResourceLoader Module
-  $out->addModules('ext.VectorUp');
+  $out->addModules('ext.ChameleonFannon');
   return true;
 }
