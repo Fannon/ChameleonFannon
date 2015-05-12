@@ -7,6 +7,13 @@
      */
     mw.libs.ChameleonFannon = {};
 
+    /**
+     * Looks for a semantic property and makes it to a global tag, displayed besides the page title
+     * Warning: This only works with annotated templates (If using mobo, use annotated-table or annotated-ul)
+     * @param  {[type]} propertyName [description]
+     * @param  {[type]} title        [description]
+     * @return {[type]}              [description]
+     */
     mw.libs.ChameleonFannon.createGlobalTag = function(propertyName, title) {
 
         try {
@@ -25,13 +32,13 @@
     /**
      * Removes rows from tables and creates tags from the values instead that will be appended / prepended to other cells
      *
-     * @param  {[type]} tableClass   CSS Class of table to process
-     * @param  {[type]} propertyName PropertyName (Uppercase! See HTML)
-     * @param  {[type]} name         Human readable name
-     * @param  {[type]} cssClass     Add following CSS classes to the tag
-     * @param  {[type]} condition    If and condition (string) is given,
-     * @param  {[type]} index        Index of the column to insert the tags in (starts with 0)
-     * @param  {[type]} prepend      If true the tag will be prepended, if false appended (default)
+     * @param  {string}         tableClass   CSS Class of table to process
+     * @param  {string}         propertyName PropertyName (Uppercase! See HTML)
+     * @param  {string|boolean} name         Human readable name
+     * @param  {string|boolean} cssClass     Add following CSS classes to the tag
+     * @param  {string|boolean} condition    If and condition (string) is given,
+     * @param  {number}         index        Index of the column to insert the tags in (starts with 0)
+     * @param  {boolean}        prepend      If true the tag will be prepended, if false appended (default)
      */
     mw.libs.ChameleonFannon.createTableTag = function(tableClass, propertyName, name, cssClass, condition, index, prepend) {
 
@@ -70,7 +77,11 @@
         }
     }
 
-    mw.libs.ChameleonFannon.hideEmptyTags = function() {
+    /**
+     * Hides empty HeaderTabs
+     * TODO: Doesn't hide if hidden properties are inserted
+     */
+    mw.libs.ChameleonFannon.hideEmptyTabs = function() {
 
         try {
             var $headertabs = $('.action-view #headertabs')
@@ -94,13 +105,11 @@
             }
 
         } catch (e) {
-            console.log('mw.libs.ChameleonFannon.hideEmptyTags() crashed');
+            console.log('mw.libs.ChameleonFannon.hideEmptyTabs() crashed');
             console.error(e);
         }
 
     }
-
-
 
 
 
@@ -179,7 +188,7 @@
             //////////////////////////////////////////
 
             // Hide empty tabs
-            mw.libs.ChameleonFannon.hideEmptyTags();
+            mw.libs.ChameleonFannon.hideEmptyTabs();
 
             // Checklist Hack: If the body contains the word "Checkliste", increase the min-width of the labels
             // TODO: Refactor this? Requires "Checkliste" to be part of the Title
