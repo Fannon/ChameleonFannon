@@ -85,7 +85,7 @@
 
         try {
             var $headertabs = $('.action-view #headertabs')
-            if ($headertabs.length > 0) {
+            if ($headertabs.length > 0 && !$(document.body).hasClass('mw-special-FormEdit')) {
                 var style = '<style>';
 
                 $headertabs.children().each(function(i, el) {
