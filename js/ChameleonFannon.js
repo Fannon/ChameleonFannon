@@ -205,6 +205,10 @@
             // $('.smwtable td:contains("falsch")').addClass('td-false');
             // $('.smwtable td:contains("wahr")').addClass('td-true');
 
+            $('.formdata [data-property]:contains("Nein")').html('<span class="glyphicon glyphicon-remove" style="color: #A94442" aria-hidden="true"></span>');
+            $('.formdata [data-property]:contains("Ja")').html('<span class="glyphicon glyphicon-ok" style="color: #7CCF2C" aria-hidden="true"></span>');
+
+
 
 
             //////////////////////////////////////////
