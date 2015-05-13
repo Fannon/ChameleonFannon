@@ -125,22 +125,19 @@
             //////////////////////////////////////////
 
             // Add View / Formedit button to main hierachy of chameleon menu
-            if ($('#ca-nstab-main').length > 0 && !($('body').hasClass('action-view'))) {
+            if ($('#ca-nstab-main').length > 0 && !($('body').hasClass('acmedtion-view'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-nstab-main').clone());
-
-                // Add second Save Button in main menu
-                if ($("#wpSave").length > 0) {
-                    var save = $('<li id="sf-save-alt" ><a href="#" title="Änderungen speichern [alt-shift-s]" accesskey="s">Speichern</a></li>')
-                    $($('.navbar-collapse > .navbar-nav')[1]).append(save);
-                    save.on('click', function() {
-                        $("#wpSave").click();
-                    });
-                }
-
             }
             if ($('#ca-form_edit').length > 0 && !($('body').hasClass('action-formedit'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-form_edit').clone());
-
+            }
+            // Add second Save Button in main menu
+            if ($("#wpSave").length > 0) {
+                var save = $('<li id="sf-save-alt" ><a href="#" title="Änderungen speichern [alt-shift-s]" accesskey="s">Speichern</a></li>')
+                $($('.navbar-collapse > .navbar-nav')[1]).append(save);
+                save.on('click', function() {
+                    $("#wpSave").click();
+                });
             }
 
 
