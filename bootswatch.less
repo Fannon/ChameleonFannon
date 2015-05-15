@@ -43,14 +43,6 @@ h4 {
     font-size: 2.0rem;
     border-bottom: 1px dotted #DDD;
 }
-.panel-heading {
-    padding: 8px 14px 6px 14px;
-
-    .panel-title {
-        border: none;
-    }
-}
-
 
 a:visited {
     color: @brand-primary;
@@ -63,6 +55,7 @@ a:visited {
 
     margin-bottom: 0;
     border-bottom: 4px solid #659ED5;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
 
     .navbar-brand {
         padding: 0 4px;
@@ -86,10 +79,7 @@ a:visited {
     }
 
     #ca-form_edit {
-        // background: #FFEDE3;
-        // a, a:active,a:hover {
-        //     color: #CB5A1D;
-        // }
+        background: #EEE;
     }
     #sf-save-alt {
         background: #E2FFA8;
@@ -133,9 +123,10 @@ body.mw-special-FormEdit {
     }
 
     li > a {
-        background: #333;
+        font-size: 0.85em;
+        background: #888;
         color: #FFF;
-        padding: 3px 8px;
+        padding: 2px 7px;
         margin: 0 4px;
         margin-bottom: 4px;
         display: inline-block;
@@ -204,6 +195,32 @@ tr.highlightRow {
 
 // Containers =================================================================
 
+
+.panel-heading {
+    padding: 8px 16px;
+
+    .panel-title {
+        border: none;
+    }
+}
+
+.panel-group {
+    margin: 14px 0;
+}
+
+.accordion {
+    .panel {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .panel-body {
+        border-right: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
+        border-left: 1px solid #DDD;
+        padding: 8px 16px;
+    }
+}
+
 // CUSTOM HEADERTABS STYLE ====================================================
 
 #headertabs.bare {
@@ -251,12 +268,10 @@ tr.highlightRow {
         padding: 1px 0;
         border-bottom: 1px dotted #EEE;
     }
-
     .row-label {
         font-weight: bold;
         text-align: right;
     }
-
 
 }
 
@@ -345,6 +360,22 @@ tr.highlightRow {
 }
 
 /** Tags */
+.mobo-tag-light a {
+    font-size: 0.9em;
+    line-height: 1em;
+    padding: 4px 6px;
+    margin: 4px 4px 4px 0;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #337AB7;
+}
+.mobo-tag-light a.new {
+    border: 1px solid #E38686;
+}
+.mobo-tag-light a:hover {
+    opacity: 0.8;
+}
 a.mobo-tag {
     font-size: 11px;
     line-height: 1em;
@@ -374,6 +405,7 @@ a.mobo-tag-ungenuegend {
 a.mobo-tag-veraltet {
     background: #B97A57;
 }
+
 
 
 /** Booleans (Checkboxes) */
@@ -456,25 +488,24 @@ a.mobo-tag-veraltet {
 /** Mobo Responsive Forms */
 .sfFieldRow {
     margin: 8px 0;
-    max-width: 640px;
 }
 .sfFieldLabel {
-    display: inline-block;
-    padding-right: 2px;
-    width: 25%;
-    min-width: 80px;
-    max-width: 180px;
+    padding-right: 0;
     font-weight: bold;
     text-align: right;
-    vertical-align: top;
     .simple-tooltip-inline {
         border-bottom: 1px solid #C8C8C8;
         padding-bottom: 1px;
     }
 }
+@media (max-width: @screen-sm-min) {
+    .sfFieldLabel {
+        text-align: left;
+    }
+}
 .sfFieldLabel::after {
     content: "*";
-    margin-left: 2px;
+    margin-left: 3px;
     font-size: 1.5em;
     line-height: 1em;
     font-weight: bold;
@@ -493,11 +524,6 @@ a.mobo-tag-veraltet {
     }
 }
 
-.sfFieldContent {
-    display: inline-block;
-    width: 70%;
-    max-width: 460px;
-}
 .checklistForm {
     .sfFormContainer {
         background: #FBFFF6 !important;

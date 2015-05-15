@@ -114,6 +114,69 @@
 
     }
 
+    /**
+     * Hides empty HeaderTabs
+     * TODO: Doesn't hide if hidden properties are inserted
+     */
+    mw.libs.ChameleonFannon.accordeonize = function(h3title) {
+
+        try {
+
+            var entryPoints = $("h2:contains('" + h3title + "')");
+
+            var id = 0;
+
+            for (var i = 0; i < entryPoints.length; i++) {
+
+                var h2 = entryPoints[i];
+
+                var html = '<div class="panel-group accordion" id="accordion-' + id + '" role="tablist" aria-multiselectable="true">';
+                html    += '    <div class="panel panel-default">';
+                html    += '        <div class="panel-heading" role="tab" id="acc-header-' + id + '">';
+                html    += '            <h4 class="panel-title">';
+                html    += '                <a data-toggle="collapse" data-parent="#accordion-' + id + '" href="#collapse-' + id + '" aria-expanded="true" aria-controls="collapse-' + id + '">';
+                html    += '                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> Alle Einträge';
+                html    += '                </a>';
+                html    += '            </h4>';
+                html    += '        </div>';
+                html    += '    </div>';
+                html    += '    <div id="collapse-' + id + '" class="panel-collapse collapse collapse-generated" role="tabpanel" aria-labelledby="acc-header-' + id + '">';
+                html    += '        <div class="panel-body"></div>';
+                html    += '    </div>';
+                html    += '</div>';
+
+                var accordion = $(html);
+                $(h2).before(accordion);
+
+                var currentEl = entryPoints[i].nextSibling;
+                var accordionBody = accordion.find('.panel-body').first();
+
+                $(h2).detach(); // Remove the H2
+
+                // Iterate all siblings until there is no more or it is an H2, too
+                while (currentEl) {
+
+                    if (currentEl.tagName && currentEl.tagName === 'H2') {
+                        currentEl = false; // Break
+                    } else {
+                        var nextSibling = currentEl.nextSibling;
+                        $(currentEl).detach().appendTo(accordionBody);
+                        currentEl = nextSibling;
+                    }
+
+                }
+
+                id += 1; // Iterate Accordion ID
+
+            }
+
+        } catch (e) {
+            console.log('mw.libs.ChameleonFannon.accordeonize() crashed');
+            console.error(e);
+        }
+
+    }
+
 
 
     $(document).ready(function() {
@@ -124,10 +187,11 @@
             // ChameleonTopMenu Buttons             //
             //////////////////////////////////////////
 
-            // Add View / Formedit button to main hierachy of chameleon menu
-            if ($('#ca-nstab-main').length > 0 && !($('body').hasClass('acmedtion-view'))) {
+            // Add View button to main hierachy of chameleon menu
+            if ($('#ca-nstab-main').length > 0 && !($('body').hasClass('action-view'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-nstab-main').clone());
             }
+            // Add SF FormEdit button to main hierachy of chameleon menu
             if ($('#ca-form_edit').length > 0 && !($('body').hasClass('action-formedit'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-form_edit').clone());
             }
@@ -206,6 +270,11 @@
             $('.formdata [data-property]:contains("Ja")').html('<span class="glyphicon glyphicon-ok" style="color: #7CCF2C" aria-hidden="true"></span>');
 
 
+            //////////////////////////////////////////
+            // Alle Einträge                        //
+            //////////////////////////////////////////
+
+            mw.libs.ChameleonFannon.accordeonize('Alle Einträge');
 
 
             //////////////////////////////////////////
