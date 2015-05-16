@@ -62,7 +62,7 @@ $wgResourceModules['ext.ChameleonFannon'] = array(
    'dependencies' => array(
    ),
    'localBasePath' => __DIR__,
-   'remoteExtPath' => '/../../skins/ChameleonFannon',
+   'remoteExtPath' => '/../../skins/ChameleonFannon'
 );
 
 // Register hooks
