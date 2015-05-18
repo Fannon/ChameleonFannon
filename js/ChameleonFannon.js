@@ -248,6 +248,15 @@
             // Adjustments                          //
             //////////////////////////////////////////
 
+            // Hide Drilldownfilters that have no values to choose from
+            if ($(document.body).hasClass('mw-special-BrowseData')) {
+                $('.drilldown-filter').each(function(i, el) {
+                    if ($(el).find('.drilldown-filter-values:contains("(Es sind keine Werte für diesen Filter vorhanden.)")').length > 0) {
+                        $(el).hide();
+                    }
+                });
+            }
+
             // Hide empty tabs
             mw.libs.ChameleonFannon.hideEmptyTabs();
 
@@ -268,6 +277,7 @@
 
             $('.formdata [data-property]:contains("Nein")').html('<span class="glyphicon glyphicon-remove" style="color: #A94442" aria-hidden="true"></span>');
             $('.formdata [data-property]:contains("Ja")').html('<span class="glyphicon glyphicon-ok" style="color: #7CCF2C" aria-hidden="true"></span>');
+
 
 
             //////////////////////////////////////////
