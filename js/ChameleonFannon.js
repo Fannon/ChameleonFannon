@@ -271,6 +271,14 @@
                 });
             }
 
+            // Hide existing pages in "NichtAngelegt" DIV
+            var nichtAngelegt = $('.NichtAngelegt');
+            if (nichtAngelegt.length > -1) {
+                nichtAngelegt.find('a:not(.new)').each(function(i, el) {
+                    $(el).parent().hide();
+                });
+            }
+
             // Color booleans
             // $('.smwtable td:contains("falsch")').addClass('td-false');
             // $('.smwtable td:contains("wahr")').addClass('td-true');
