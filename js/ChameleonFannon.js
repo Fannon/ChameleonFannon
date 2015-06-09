@@ -111,8 +111,32 @@
             console.log('mw.libs.ChameleonFannon.hideEmptyTabs() crashed');
             console.error(e);
         }
+    };
 
-    }
+
+    mw.libs.ChameleonFannon.redLinkSummary = function() {
+        if ($(document.body).hasClass('action-view')) {
+
+            var redLinks = $('#bodyContent a.new')
+                .filter(':not(.mw-userlink)')
+                .filter(":not(:contains('Diskussion'))")
+            ;
+
+            var totalRedLinks = redLinks.length;
+
+            // Ignore the changelist and the "NichtAngelegt" Summary
+            var changelistRedLinks = $('.mw-changeslist a.new').length;
+            var nichtAngelegtRedLinks = $('.NichtAngelegt a.new').length;
+            var smwtableRedLinks = $('.smwtable  a.new').length;
+
+            var sumRedLinks = totalRedLinks - changelistRedLinks - nichtAngelegtRedLinks - smwtableRedLinks;
+
+            if (sumRedLinks > 0) {
+                var html = '<li class="RedLinkSummary"><span class="badge">' + sumRedLinks + '</span></li>';
+                $($('.navbar-collapse > .navbar-nav')[1]).append(html);
+            }
+        }
+    };
 
     /**
      * Hides empty HeaderTabs
@@ -211,10 +235,7 @@
 
             // Tag Quality informations
             if ($('.formdata-Qualitaet').length > 0) {
-                mw.libs.ChameleonFannon.createGlobalTag('inBearbeitung', 'In Bearbeitung');
                 mw.libs.ChameleonFannon.createGlobalTag('falsch', 'Vermutlich falsch');
-                mw.libs.ChameleonFannon.createGlobalTag('ungenuegend', 'Ungenügend');
-                mw.libs.ChameleonFannon.createGlobalTag('veraltet', 'Veraltet');
 
                 // TODO: Refactor this into an own function
                 // Free tags (semicolon separated list)
@@ -279,21 +300,16 @@
                 });
             }
 
-            // Color booleans
-            // $('.smwtable td:contains("falsch")').addClass('td-false');
-            // $('.smwtable td:contains("wahr")').addClass('td-true');
-
-            // TODO: Exakt Ja oder Nein
-            // $('.formdata [data-property]:contains("Nein")').html('<span class="glyphicon glyphicon-remove" style="color: #A94442" aria-hidden="true"></span>');
-            // $('.formdata [data-property]:contains("Ja")').html('<span class="glyphicon glyphicon-ok" style="color: #7CCF2C" aria-hidden="true"></span>');
-
-
 
             //////////////////////////////////////////
             // Alle Einträge                        //
             //////////////////////////////////////////
 
             mw.libs.ChameleonFannon.accordeonize('Alle Einträge');
+
+            mw.libs.ChameleonFannon.redLinkSummary();
+
+
 
 
             //////////////////////////////////////////
@@ -304,26 +320,10 @@
             // This moves potential info icons down to the next row.
             // To avoid this, make the element an inline-block.
             // Since CSS doesn't support selecting a parent, this has to be done through JavaScript.
-            $('sf-select2-container').parent().css({
-                'display': 'inline-block'
-            });
 
-            // Auto trims all Input fields
-            // TODO: Seems unnecessary
-            // mw.hook('sf.formValidationBefore').add(function() {
-            //     console.log('sf.formValidationBefore');
-            //     var $inputFields = $('#sfForm input');
-
-            //     $inputFields.each(function() {
-            //         var val = $(this).val();
-            //         var trim = val.trim();
-            //         if (val !== trim) {
-            //             $(this).val(trim);
-            //             console.log('Trimmed "' + val + '" to "' + trim + '"');
-            //         }
-            //     });
+            // $('sf-select2-container').parent().css({
+            //     'display': 'inline-block'
             // });
-
 
         } catch (e) {
             console.error('ChameleonFannon.js crashed');

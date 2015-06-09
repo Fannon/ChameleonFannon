@@ -80,6 +80,7 @@ a:visited {
 
     #ca-form_edit {
         background: #EEE;
+        border-right: 1px solid #E7E7E7;
     }
     #sf-save-alt {
         background: #E2FFA8;
@@ -151,6 +152,15 @@ body.mw-special-FormEdit {
     }
 }
 
+// RedLinkSummary
+.RedLinkSummary {
+    border-right: 1px solid #E7E7E7;
+    .badge {
+        background-color: #B11C00;
+        margin: 16px;
+    }
+}
+
 
 // Buttons ====================================================================
 
@@ -195,6 +205,20 @@ tr.highlightRow {
 
 // Containers / Widgets =======================================================
 
+#toc {
+    background: #F8F8F8;
+    padding: 8px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+
+    #toctitle {
+        margin: 0;
+        h2 {
+            font-size: 20px;
+        }
+    }
+}
+
 
 .panel-heading {
     padding: 8px 16px;
@@ -222,8 +246,13 @@ tr.highlightRow {
 }
 
 .widget-verlauf {
-    .comment {
-        display: none;
+    .comment,
+    .mw-usertoollinks,
+    .mw-rollback-link {
+        // display: none;
+    }
+    .mw-title {
+        font-weight: bold;
     }
 }
 
@@ -382,7 +411,7 @@ tr.highlightRow {
     border: 1px solid #E38686;
 }
 .mobo-tag-light a:hover {
-    opacity: 0.8;
+    background: #F8F8F8;
 }
 a.mobo-tag {
     font-size: 11px;
