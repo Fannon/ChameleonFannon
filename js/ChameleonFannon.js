@@ -164,7 +164,7 @@
                 html    += '            </h4>';
                 html    += '        </div>';
                 html    += '    </div>';
-                html    += '    <div id="collapse-' + id + '" class="panel-collapse collapse collapse-generated" role="tabpanel" aria-labelledby="acc-header-' + id + '">';
+                html    += '    <div id="collapse-' + id + '" class="panel-collapse collapse.in collapse-generated" role="tabpanel" aria-labelledby="acc-header-' + id + '">';
                 html    += '        <div class="panel-body"></div>';
                 html    += '    </div>';
                 html    += '</div>';
