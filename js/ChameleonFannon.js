@@ -215,9 +215,13 @@
             if ($('#ca-nstab-main').length > 0 && !($('body').hasClass('action-view'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-nstab-main').clone());
             }
-            // Add SF FormEdit button to main hierachy of chameleon menu
+            // Add SemanticForms edit button to main hierachy of chameleon menu
             if ($('#ca-form_edit').length > 0 && !($('body').hasClass('action-formedit'))) {
                 $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-form_edit').clone());
+            }
+            // Add VisualEditor edit button to main hierachy of chameleon menu
+            if ($('#ca-ve-edit').length > 0) {
+                $($('.navbar-collapse > .navbar-nav')[1]).append($('#ca-ve-edit').clone());
             }
             // Add second Save Button in main menu
             if ($("#wpSave").length > 0) {
@@ -281,17 +285,6 @@
             // Hide empty tabs
             mw.libs.ChameleonFannon.hideEmptyTabs();
 
-            // Checklist Hack: If the body contains the word "Checkliste", increase the min-width of the labels
-            // TODO: Refactor this? Requires "Checkliste" to be part of the Title
-            if (document.body.className.indexOf("Checkliste") > -1) {
-                console.log('CHECKLIST!');
-                $('#sfForm').addClass('checklistForm');
-
-                $('.formdata td').each(function() {
-                    $(this).addClass($(this).text().trim());
-                });
-            }
-
             // Hide existing pages in "NichtAngelegt" DIV
             var nichtAngelegt = $('.NichtAngelegt');
             if (nichtAngelegt.length > -1) {
@@ -305,10 +298,11 @@
             // Alle Einträge                        //
             //////////////////////////////////////////
 
+            // Alle H2 mit titel "Alle Einträge" zu Accordeons machen:
             mw.libs.ChameleonFannon.accordeonize('Alle Einträge');
 
+            // Zähle rote Links und zeige sie im hauptmenü an
             mw.libs.ChameleonFannon.redLinkSummary();
-
 
 
 

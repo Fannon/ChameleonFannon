@@ -78,10 +78,12 @@ a:visited {
         }
     }
 
-    #ca-form_edit {
+    #ca-form_edit,
+    #ca-ve-edit {
         background: #EEE;
         border-right: 1px solid #E7E7E7;
     }
+
     #sf-save-alt {
         background: #E2FFA8;
         a, a:active,a:hover {
@@ -139,8 +141,10 @@ body.mw-special-FormEdit {
 // Bottom Navbar
 .p-tb.navbar {
     background: none;
-    border: none;
     margin: 8px 0;
+    padding-top: 8px;
+    border: none;
+    border-top: 1px solid #EEE;
 
     .navbar-nav > li > a {
         padding: 0 0 0 6px;
@@ -441,8 +445,8 @@ a.mobo-tag-ungenuegend {
 }
 a.mobo-tag-veraltet {
     background: #B97A57;
-}
 
+}
 
 
 /** Booleans (Checkboxes) */
@@ -453,6 +457,12 @@ a.mobo-tag-veraltet {
     color: #CF5642;
 }
 
+
+// CUSTOM VISUAL EDITOR STYLE =================================================
+
+.ve-init-target {
+
+}
 
 // CUSTOM SEMANTIC FORMS  STYLE ===============================================
 
@@ -558,39 +568,6 @@ a.mobo-tag-veraltet {
     .sfFieldLabel::after {
         color: #FFB93D;
         opacity: 1;
-    }
-}
-
-.checklistForm {
-    .sfFormContainer {
-        background: #FBFFF6 !important;
-        border: 1px solid #70C00C !important;
-    }
-    .sfFieldLabel {
-        min-width: 320px;
-    }
-    .sfFieldContent {
-        width: auto;
-    }
-    .sfFieldRow {
-        max-width: none;
-        border-bottom: 1px solid #DDD;
-        margin: 4px 0;
-        padding-bottom: 4px;
-    }
-}
-.formdata {
-    td.Ja {
-        background-color: #5CA500;
-        color: #FFF;
-    }
-    td.Nein {
-        background-color: #9D2114;
-        color: #FFF;
-    }
-    td.Unbekannt {
-        background-color: #D19800;
-        color: #FFF;
     }
 }
 
