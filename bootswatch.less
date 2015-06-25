@@ -48,6 +48,10 @@ a:visited {
     color: @brand-primary;
 }
 
+p {
+    margin: 8px 0;
+}
+
 // Navbar =====================================================================
 
 // Top Navbar
@@ -374,7 +378,8 @@ tr.highlightRow {
 .description-box,
 .infoMessage,
 .mobo-generated,
-#catlinks {
+#catlinks,
+.smw-editpage-help {
     display: block;
     padding: 4px 8px;
     margin: 8px 0;
@@ -398,6 +403,11 @@ tr.highlightRow {
 #catlinks {
     border: 1px solid #E7E7E7;
     background: #F8F8F8;
+}
+
+/** Hide Message Boxes */
+#smw-form-editpage-help {
+    display: none;
 }
 
 /** Tags */
@@ -574,4 +584,11 @@ a.mobo-tag-veraltet {
 .ui-state-active,
 .ui-widget-content {
     background: #FCFCFC !important;
+}
+
+// CUSTOM SYNTAX HIGHLIGHT STYLE ===============================================
+
+.bash.source-bash .kw2 {
+    color: #0C98C2 !important;
+    font-weight: normal !important;
 }
