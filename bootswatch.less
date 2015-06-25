@@ -105,6 +105,10 @@ p {
     .caret {
         display: none;
     }
+
+    #searchGoButton {
+        display: none;
+    }
 }
 
 body.action-formedit,
@@ -213,6 +217,12 @@ tr.highlightRow {
 
 // Containers / Widgets =======================================================
 
+fieldset {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 8px;
+}
+
 #toc {
     background: #F8F8F8;
     padding: 8px;
@@ -227,9 +237,21 @@ tr.highlightRow {
     }
 }
 
+// Semantic Drilldown menu
+ul#drilldown-categories {
+  border: 1px solid #BBB !important;
+  border-radius: 3px;
+  padding-left: 0;
+
+  li.category {
+      border-top: 1px solid #BBB !important;
+      background: #FFF !important;
+    }
+}
+
 
 .panel-heading {
-    padding: 8px 16px;
+    padding: 10px 16px 8px 16px;
 
     .panel-title {
         border: none;
@@ -527,6 +549,21 @@ a.mobo-tag-veraltet {
 .select2-container-multi .select2-choices {
     border-color: #BBB !important;
     border-bottom: 3px double #BBB !important;
+}
+
+input.hasDatepicker {
+    padding: 4px 4px;
+    border-radius: 3px;
+    border: 1px solid #BBB;
+    margin-right: 8px;
+}
+
+button.ui-datepicker-trigger {
+    border-radius: 3px;
+    border: 1px solid #BBB;
+    background-color: #EEE;
+    margin-top: 1px;
+    padding: 2px 8px;
 }
 
 .autoGrow {
