@@ -331,13 +331,20 @@ ul#drilldown-categories {
 // MOBO display formats =======================================================
 
 .bootstrap-row {
+
+    overflow: hidden;
+    margin-bottom: 14px;
+    padding: 4px 0;
+
     .row {
         padding: 1px 0;
-        border-bottom: 1px dotted #EEE;
     }
     .row-label {
         font-weight: bold;
         text-align: right;
+        background-color: #ECECEC;
+        border-radius: 0 3px 3px;
+        padding-right: 8px;
     }
 
 }
@@ -628,4 +635,12 @@ button.ui-datepicker-trigger {
 .bash.source-bash .kw2 {
     color: #0C98C2 !important;
     font-weight: normal !important;
+}
+
+// PRINTING STYLE ==============================================================
+
+@media print {
+   .mw-code {
+      font-size: 0.85em;
+   }
 }
