@@ -18,7 +18,7 @@
 
         try {
             var el = $('[data-property=' + propertyName + ']');
-            if (el && el.length > 0 && el.text() === 'Ja') {
+            if (el && el.length > 0 && el.text().trim() === 'Ja') {
                 url = mw.config.get('wgScript') + '/Spezial:Suche_mittels_Attribut/' + propertyName + '/wahr';
                 $('#firstHeading').append('<a class="mobo-tag mobo-tag-' + propertyName + '" href="' + url + '">' + title + '</div>');
             }
