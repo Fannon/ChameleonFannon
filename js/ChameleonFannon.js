@@ -28,6 +28,33 @@
         }
     }
 
+    mw.libs.ChameleonFannon.createPropertyTag = function(propertyName) {
+
+        try {
+            if ($('[data-property=' + propertyName + ']').length > 0) {
+                var tags = $('[data-property=' + propertyName + '] a');
+
+                tags.each(function() {
+                    var val = $(this).text();
+
+                    if (val.trim()) {
+                        $.each(val.split(';'), function(index, value) {
+                            value = value.trim();
+                            url = mw.config.get('wgScript') + '/Spezial:Suche_mittels_Attribut/' + propertyName + '/' + value;
+                            $('#firstHeading').append('<a class="mobo-tag mobo-tag-' + propertyName + '" href="' + url + '">' + value + '</a>');
+                        });
+                    }
+                });
+
+            }
+        } catch (e) {
+            console.log('mw.libs.ChameleonFannon.createPropertyTag() crashed');
+            console.error(e);
+        }
+    }
+
+
+
     /**
      * Removes rows from tables and creates tags from the values instead that will be appended / prepended to other cells
      *
@@ -233,28 +260,13 @@
 
 
             //////////////////////////////////////////
-            // Global Tags                          //
+            // Tags                                 //
             //////////////////////////////////////////
 
-            // Tag Quality informations
-            if ($('.formdata-Qualitaet').length > 0) {
-                mw.libs.ChameleonFannon.createGlobalTag('falsch', 'Vermutlich falsch');
+            mw.libs.ChameleonFannon.createPropertyTag('kundenRolle');
+            mw.libs.ChameleonFannon.createPropertyTag('tag');
 
-                // TODO: Refactor this into an own function
-                // Free tags (semicolon separated list)
-                var tags = $('[data-property=tag]');
-                if (tags.length > 0) {
-                    var val = tags.text();
-
-                    if (val.trim()) {
-                        $.each(val.split(';'), function(index, value) {
-                            value = value.trim();
-                            url = mw.config.get('wgScript') + '/Spezial:Suche_mittels_Attribut/Tag/' + value;
-                            $('#firstHeading').append('<a class="mobo-tag mobo-tag-tag" href="' + url + '">' + value + '</a>');
-                        });
-                    }
-                }
-            }
+            mw.libs.ChameleonFannon.createGlobalTag('falsch', 'Unvollständig / Falsch');
 
 
             //////////////////////////////////////////
@@ -279,6 +291,10 @@
                         $(el).hide();
                     }
                 });
+            }
+
+            if ($('#headertabs').length > 0 && $('#mw-content-text > *').length > 2) {
+                ($('#headertabs')).after('<h2 id="freetext-header">Zusatzinformationen</h2>');
             }
 
             // Hide empty tabs

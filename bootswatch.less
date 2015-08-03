@@ -24,10 +24,8 @@ h1.firstHeading {
 
 h2 {
     font-size: 2.4rem;
-
     margin: 2.2rem 0 4px 0;
     padding-bottom: 4px;
-
     border-bottom: 3px double #DDD;
 }
 h3 {
@@ -42,6 +40,13 @@ h3 {
 h4 {
     font-size: 2.0rem;
     border-bottom: 1px dotted #DDD;
+}
+
+h2#freetext-header {
+    background: #F2F2f2;
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+    border-bottom: 3px double #CCC;
 }
 
 a:visited {
@@ -323,8 +328,7 @@ ul#drilldown-categories {
 }
 
 #headertabs.bare.ui-tabs {
-    border-bottom: 4px solid #EEE !important;
-    padding: 8px 0 !important;
+
 }
 
 
@@ -444,6 +448,22 @@ ul#drilldown-categories {
 }
 
 /** Tags */
+a.mobo-tag {
+    font-size: 11px;
+    line-height: 1em;
+    background: #444;
+    color: #FFF;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+}
+#firstHeading a.mobo-tag {
+    position: relative;
+    top: -5px;
+    font-size: 12px;
+}
 .mobo-tag-light a {
     font-size: 0.9em;
     line-height: 1em;
@@ -460,18 +480,7 @@ ul#drilldown-categories {
 .mobo-tag-light a:hover {
     background: #F8F8F8;
 }
-a.mobo-tag {
-    font-size: 11px;
-    line-height: 1em;
-    background: #444;
-    color: #FFF;
-    padding: 4px 8px 3px 8px;
-    margin-left: 8px;
-    border-radius: 3px;
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 a.mobo-tag:hover {
     opacity: 0.9;
     color: #FFF;
@@ -488,7 +497,9 @@ a.mobo-tag-ungenuegend {
 }
 a.mobo-tag-veraltet {
     background: #B97A57;
-
+}
+a.mobo-tag-kundenRolle {
+    background: #246995;
 }
 
 
