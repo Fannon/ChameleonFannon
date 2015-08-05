@@ -274,9 +274,9 @@
             //////////////////////////////////////////
 
             // tableClass, propertyName, name, cssClass, condition, index, prepend
-            mw.libs.ChameleonFannon.createTableTag('KontaktDatenAsk', 'Bevorzugt', 'bevorzugt', 'label label-warning', 'wahr', 5, true);
-            mw.libs.ChameleonFannon.createTableTag('KontaktDatenAsk', 'Privat', 'privat', 'label label-danger', 'wahr', 5, true);
             mw.libs.ChameleonFannon.createTableTag('AdressenAsk', 'Privat', 'privat', 'label label-danger', 'wahr', 0, false);
+            // mw.libs.ChameleonFannon.createTableTag('KontaktDatenAsk', 'Bevorzugt', 'bevorzugt', 'label label-warning', 'wahr', 5, true);
+            // mw.libs.ChameleonFannon.createTableTag('KontaktDatenAsk', 'Privat', 'privat', 'label label-danger', 'wahr', 5, true);
             // mw.libs.ChameleonFannon.createTableTag('HatMitarbeiterAsk', 'Rolle', false, false, false, 0, false);
 
 
@@ -293,7 +293,7 @@
                 });
             }
 
-            if ($('#headertabs').length > 0 && $('#mw-content-text > *').length > 2) {
+            if ($('#headertabs').length > 0 && $('#mw-content-text > *').length > 1) {
                 ($('#headertabs')).after('<h2 id="freetext-header">Zusatzinformationen</h2>');
             }
 
