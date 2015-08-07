@@ -6,7 +6,8 @@
 }
 
 #bodyContent {
-    padding-bottom: 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px dotted #DDD;
 }
 
 // Typography =================================================================
@@ -43,10 +44,7 @@ h4 {
 }
 
 h2#freetext-header {
-    background: #F2F2f2;
-    padding: 5px 10px;
-    border: 1px solid #CCC;
-    border-bottom: 3px double #CCC;
+    border-bottom: 3px solid #DDD;
 }
 
 a:visited {
@@ -129,9 +127,9 @@ body.mw-special-FormEdit {
 #catlinks {
 
     background: none !important;
+    padding: 0 !important;
+    margin: 10px 0 0px 0 !important;
     border: none !important;
-    padding: 4px 0 0 0 !important;
-    margin: 0 0 4px 0 !important;
 
     li {
         border: none;
@@ -140,9 +138,9 @@ body.mw-special-FormEdit {
 
     li > a {
         font-size: 0.85em;
-        background: #888;
+        background: #555;
         color: #FFF;
-        padding: 2px 7px;
+        padding: 2px 8px 1px 8px;
         margin: 0 4px;
         margin-bottom: 4px;
         display: inline-block;
@@ -154,16 +152,17 @@ body.mw-special-FormEdit {
 // Bottom Navbar
 .p-tb.navbar {
     background: none;
-    margin: 8px 0;
-    padding-top: 8px;
+    margin: 4px 0 8px 0;
+    padding: 10px 0 6px 0;
     border: none;
-    border-top: 1px solid #EEE;
+    border-top: 1px dotted #DDD;
+    border-bottom: 1px dotted #DDD;
 
     .navbar-nav > li > a {
         padding: 0 0 0 6px;
         background: #EEE;
         border-radius: 3px;
-        padding: 1px 8px;
+        padding: 2px 8px 1px 8px;
         margin-right: 8px;
         margin-bottom: 4px;
     }
@@ -212,6 +211,15 @@ tr.highlightRow {
 
 
 // Forms ======================================================================
+
+#sfForm .createboxInput,
+#sfForm select,
+#sfForm input[type="checkbox"],
+#sfForm textarea
+ {
+    font-size: 12px;
+}
+
 
 // Navs =======================================================================
 
